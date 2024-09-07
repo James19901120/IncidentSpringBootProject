@@ -1,15 +1,14 @@
 package org.example.incidentdemo;
 
-import org.example.incidentdemo.controller.IncidentController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.cache.annotation.EnableCaching;
 
 @SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
+@EnableCaching
 public class IncidentDemoApplication {
-
     public static void main(String[] args) {
-        SpringApplication.run(IncidentDemoApplication.class,args);
+        SpringApplication.run(IncidentDemoApplication.class, args);
     }
-
 }

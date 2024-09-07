@@ -2,6 +2,7 @@ package org.example.incidentdemo.controller;
 
 
 import jakarta.annotation.Resource;
+import jakarta.validation.Valid;
 import org.example.incidentdemo.model.Incident;
 import org.example.incidentdemo.service.IncidentService;
 import org.springframework.http.HttpStatus;
@@ -17,7 +18,7 @@ public class IncidentController {
     private IncidentService incidentService;
 
     @PostMapping
-    public ResponseEntity<Incident> createIncident(@RequestBody Incident incident) {
+    public ResponseEntity<Incident> createIncident(@Valid @RequestBody Incident incident) {
         Incident createdIncident = incidentService.addIncident(incident);
         return new ResponseEntity<>(createdIncident, HttpStatus.CREATED);
     }

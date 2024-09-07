@@ -1,5 +1,6 @@
 package org.example.incidentdemo.model;
 
+import jakarta.validation.constraints.NotBlank;
 import jdk.jfr.SettingDefinition;
 import lombok.Data;
 
@@ -7,9 +8,9 @@ import lombok.Data;
 public class Incident {
 
     private Long id;
-
+    @NotBlank(message = "Description is mandatory")
     private String description;
-
+    @NotBlank(message = "Status is mandatory")
     private String status;
 
     public Incident(Long id, String description, String status) {
